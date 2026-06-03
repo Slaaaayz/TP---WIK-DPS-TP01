@@ -1,6 +1,6 @@
 import http from "node:http";
 
-const port = process.env.PING_LISTEN_PORT ;
+const port = process.env.PING_LISTEN_PORT || 3000;
 const server = http.createServer((req, res) => {
   if (req.method !== "GET" || req.url !== "/ping") {
     res.statusCode = 404;
